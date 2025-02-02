@@ -1,9 +1,5 @@
 import { IoArrowForwardCircle } from "react-icons/io5";
-import { bandcamp } from "./assets/bandcamp.svg";
-import { donation } from "./assets/donation.svg";
-import { soundcloud } from "./assets/soundcloud.svg";
-import { spotify } from "./assets/spotify.svg";
-import { youtube } from "./assets/bandcamp.svg";
+
 
 function App() {
   const openLink = (url) => {
@@ -25,7 +21,7 @@ function App() {
           onClick={() => openLink("https://youtube.com")}
           className="hover:scale-110 flex w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
-          <img src={youtube} alt="logo" className="w-24 h-24 object-cover" />
+          <img src="https://www.svgrepo.com/show/475700/youtube-color.svg" alt="logo" className="w-24 h-24 object-cover" />
           <div className="flex-grow p-4 text-left">
             <h2 className="text-lg font-bold mb-2">Youtube</h2>
             <p className="text-gray-600 mb-2">
@@ -40,7 +36,7 @@ function App() {
           onClick={() => openLink("https://spotify.com")}
           className="hover:scale-110 flex w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
-          <img src={spotify} alt="logo" className="w-24 h-24 object-cover" />
+          <img src="https://www.svgrepo.com/show/303356/spotify-logo.svg" alt="logo" className="w-24 h-24 object-cover" />
           <div className="flex-grow p-4 text-left">
             <h2 className="text-lg font-bold mb-2">Spotify</h2>
             <p className="text-gray-600 mb-2">
@@ -56,7 +52,7 @@ function App() {
           onClick={() => openLink("https://bandcamp.com")}
           className="hover:scale-110 flex w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
-          <img src={bandcamp} alt="logo" className="w-24 h-24 object-cover" />
+          <img src="https://www.svgrepo.com/show/172824/bc-bandcamp-logo.svg" alt="logo" className="w-24 h-24 object-cover" />
           <div className="flex-grow p-4 text-left">
             <h2 className="text-lg font-bold mb-2">Bandcamp</h2>
             <p className="text-gray-600 mb-2">
@@ -71,7 +67,7 @@ function App() {
           onClick={() => openLink("https://soundcloud.com")}
           className="hover:scale-110 flex w-[480px] h-[120px]  justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
-          <img src={soundcloud} alt="logo" className="w-24 h-24 object-cover" />
+          <img src="https://www.svgrepo.com/show/303135/soundcloud-logo.svg" alt="logo" className="w-24 h-24 object-cover" />
           <div className="flex-grow p-4 text-left">
             <h2 className="text-lg font-bold mb-2">Soundcloud</h2>
             <p className="text-gray-600 mb-2">
@@ -91,7 +87,7 @@ function App() {
           }
           className="hover:scale-110 w-[480px] h-[120px] justify-between flex items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
-          <img src={donation} alt="logo" className="w-24 h-24 object-cover" />
+          <img src="https://www.svgrepo.com/show/246767/donation-heart.svg" alt="logo" className="w-24 h-24 object-cover" />
           <div className="flex-grow p-4 text-left">
             <h2 className="text-lg font-bold mb-2">Donation - AFAD</h2>
             <p className="text-gray-600 mb-2">You can make a donation here.</p>
@@ -104,7 +100,7 @@ function App() {
           onClick={() => openLink("https://ahbap.org/bagis/dogal-afetler")}
           className="hover:scale-110 flex w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4 mb-4"
         >
-          <img src={donation} alt="logo" className="w-24 h-24 object-cover" />
+          <img src="https://www.svgrepo.com/show/246767/donation-heart.svg" alt="logo" className="w-24 h-24 object-cover" />
           <div className="flex-grow p-4 text-left">
             <h2 className="text-lg font-bold mb-2">Donation - AHBAP</h2>
             <p className="text-gray-600 mb-2">You can make a donation here.</p>
