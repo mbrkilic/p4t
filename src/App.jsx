@@ -46,6 +46,21 @@ function App() {
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
 
+        {/*apple sec*/}
+        <button
+          onClick={() => openLink("https://music.apple.com")}
+          className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
+        >
+          <img src="https://www.svgrepo.com/show/349299/apple-music.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
+          <div className="flex-grow p-4 text-left">
+            <h2 className="text-sm sm:text-md md:text-lg font-bold mb-2">Soundcloud</h2>
+            <p className="text-xs sm:text-sm md:text-md text-gray-600 mb-2">
+              You can listen to the album on Apple Music.
+            </p>
+          </div>
+          <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
+        </button>
+
         {/*bandcamp sec*/}
         <button
           onClick={() => openLink("https://bandcamp.com")}
