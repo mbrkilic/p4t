@@ -53,7 +53,7 @@ function App() {
         >
           <img src="https://www.svgrepo.com/show/349299/apple-music.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
           <div className="flex-grow p-4 text-left">
-            <h2 className="text-sm sm:text-md md:text-lg font-bold mb-2">Soundcloud</h2>
+            <h2 className="text-sm sm:text-md md:text-lg font-bold mb-2">Apple Music</h2>
             <p className="text-xs sm:text-sm md:text-md text-gray-600 mb-2">
               You can listen to the album on Apple Music.
             </p>
