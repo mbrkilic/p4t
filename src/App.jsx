@@ -14,7 +14,7 @@ function App() {
           className="hover:scale-110 w-full sm:w-[300px] md:w-[400px] lg:w-[480px] rounded-md"
         />
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mt-4">Pray for Turkey</h1>
-        <h3 className="text-lg sm:text-xl md:text-2xl mt-4 font-semibold">Album Listen</h3>
+        <h3 className="text-lg sm:text-xl md:text-2xl mt-4 font-semibold">for Listen</h3>
         
         {/*youtube sec*/}
         <button
@@ -123,6 +123,10 @@ function App() {
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
       </div>
+      
+      <footer className="mt-6 text-center text-gray-500 text-xs sm:text-sm md:text-base lg:text-lg">
+        coded by mbrkilic
+      </footer>
     </>
   );
 }
