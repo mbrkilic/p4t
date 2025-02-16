@@ -34,11 +34,11 @@ const CountdownTimer = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-100/95 to-white/90 backdrop-blur-sm"></div>
-      <div className="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-2xl text-center max-w-2xl mx-auto z-10 border border-gray-200">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800 tracking-tight">Album Release Countdown</h2>
-        <div className="grid grid-cols-4 gap-6">
+      <div className="bg-white/80 backdrop-blur-md p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl text-center w-full max-w-2xl mx-auto z-10 border border-gray-200">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-gray-800 tracking-tight">Album Release Countdown</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           <TimeUnit value={timeLeft.days} label="Days" />
           <TimeUnit value={timeLeft.hours} label="Hours" />
           <TimeUnit value={timeLeft.minutes} label="Minutes" />
@@ -50,9 +50,13 @@ const CountdownTimer = ({ onComplete }) => {
 };
 
 const TimeUnit = ({ value, label }) => (
-  <div className="text-center p-4 bg-gradient-to-b from-gray-50 to-white rounded-xl shadow-lg border border-gray-100">
-    <div className="text-4xl font-bold text-gray-800 mb-1 font-mono">{value.toString().padStart(2, '0')}</div>
-    <div className="text-sm font-medium text-gray-500 uppercase tracking-wider">{label}</div>
+  <div className="text-center p-2 sm:p-3 md:p-4 bg-gradient-to-b from-gray-50 to-white rounded-xl shadow-lg border border-gray-100">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-1 font-mono">
+      {value.toString().padStart(2, '0')}
+    </div>
+    <div className="text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
+      {label}
+    </div>
   </div>
 );
 
