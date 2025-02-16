@@ -1,17 +1,23 @@
+import { useState } from 'react';
 import { IoArrowForwardCircle } from "react-icons/io5";
+import cover from './assets/cover.jpg'
+import CountdownTimer from './components/CountdownTimer';
 
 function App() {
+  const [isCountdownComplete, setIsCountdownComplete] = useState(false);
+  
   const openLink = (url) => {
     window.open(url, "_blank");
   };
 
   return (
-    <>
-      <div className="mt-6 flex mx-auto flex-col justify-center items-center w-full max-w-7xl px-4">
+    <div className="bg-gray-100 min-h-screen">
+      <CountdownTimer onComplete={() => setIsCountdownComplete(true)} />
+      <div className="flex mx-auto flex-col justify-center items-center w-full max-w-7xl px-4">
         <img
-          src="https://www.udiscovermusic.com/wp-content/uploads/2018/10/Ice-Cube-Death-Certificate-album-cover-web-optimised-820.jpg"
+          src={cover}
           alt="cover"
-          className="hover:scale-110 w-full sm:w-[300px] md:w-[400px] lg:w-[480px] rounded-md"
+          className="mt-6 hover:scale-110 w-full sm:w-[300px] md:w-[400px] lg:w-[480px] rounded-md"
         />
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mt-4">Pray for Turkey</h1>
         <h3 className="text-lg sm:text-xl md:text-2xl mt-4 font-semibold">for Listen</h3>
@@ -92,6 +98,19 @@ function App() {
         </button>
 
         <h3 className="text-lg sm:text-xl md:text-2xl mt-4 font-semibold">for Donation</h3>
+
+         {/*ahbap sec*/}
+         <button
+          onClick={() => openLink("https://ahbap.org/bagis/dogal-afetler")}
+          className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4 mb-4"
+        >
+          <img src="https://www.svgrepo.com/show/246767/donation-heart.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
+          <div className="flex-grow p-4 text-left">
+            <h2 className="text-sm sm:text-md md:text-lg font-bold mb-2">Donation - AHBAP</h2>
+            <p className="text-xs sm:text-sm md:text-md text-gray-600 mb-2">You can make a donation here.</p>
+          </div>
+          <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
+        </button>
         
         {/*afad sec*/}
         <button
@@ -110,24 +129,13 @@ function App() {
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
 
-        {/*ahbap sec*/}
-        <button
-          onClick={() => openLink("https://ahbap.org/bagis/dogal-afetler")}
-          className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4 mb-4"
-        >
-          <img src="https://www.svgrepo.com/show/246767/donation-heart.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
-          <div className="flex-grow p-4 text-left">
-            <h2 className="text-sm sm:text-md md:text-lg font-bold mb-2">Donation - AHBAP</h2>
-            <p className="text-xs sm:text-sm md:text-md text-gray-600 mb-2">You can make a donation here.</p>
-          </div>
-          <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
-        </button>
+       
       </div>
       
       <footer className="mt-6 text-center text-gray-500 text-xs sm:text-sm md:text-base lg:text-lg">
         coded by mbrkilic
       </footer>
-    </>
+    </div>
   );
 }
 
