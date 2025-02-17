@@ -32,7 +32,7 @@ function App() {
           alt="cover"
           className="mt-6 hover:scale-110 w-full sm:w-[300px] md:w-[400px] lg:w-[480px] rounded-md"
         />
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mt-4">Pray for Turkey</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mt-4">Pray for Turkiye</h1>
         <h3 className="text-lg sm:text-xl md:text-2xl mt-4 font-semibold">for Listen</h3>
         
         {/*youtube sec*/}
