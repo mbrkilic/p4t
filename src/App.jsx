@@ -21,7 +21,7 @@ function App() {
       {showAlert && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-black/80 text-white px-8 py-4 rounded-xl shadow-xl backdrop-blur-sm">
-            <p className="text-sm sm:text-base text-center">Album will be released on February 21, 2025</p>
+            <p className="text-sm sm:text-base text-center">Album will be released on February 21, 2025 (Estimated)</p>
           </div>
         </div>
       )}
