@@ -5,14 +5,27 @@ import CountdownTimer from './components/CountdownTimer';
 
 function App() {
   const [isCountdownComplete, setIsCountdownComplete] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   
   const openLink = (url) => {
-    window.open(url, "_blank");
+    if (url.includes('ahbap.org') || url.includes('afad.gov.tr')) {
+      window.open(url, "_blank");
+    } else {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000); // 3 saniye sonra uyarıyı kapat
+    }
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <CountdownTimer onComplete={() => setIsCountdownComplete(true)} />
+    <div className="bg-gray-100 min-h-screen relative">
+      {showAlert && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-black/80 text-white px-8 py-4 rounded-xl shadow-xl backdrop-blur-sm">
+            <p className="text-sm sm:text-base text-center">Album will be released on February 21, 2025</p>
+          </div>
+        </div>
+      )}
+      
       <div className="flex mx-auto flex-col justify-center items-center w-full max-w-7xl px-4">
         <img
           src={cover}
