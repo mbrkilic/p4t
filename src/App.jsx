@@ -4,20 +4,41 @@ import cover from './assets/cover.jpg'
 import { useLanguage } from './context/LanguageContext';
 
 function App() {
-  const [showAlert, setShowAlert] = useState(false);
+  const [showBandcampAlert, setShowBandcampAlert] = useState(false);
+  const [showAppleAlert, setShowAppleAlert] = useState(false);
   const { language, toggleLanguage, translations } = useLanguage();
   
   const openLink = (url) => {
-    if (url.includes('ahbap.org') || url.includes('afad.gov.tr')) {
-      window.open(url, "_blank");
+    if (url === "https://bandcamp.com") {
+      setShowBandcampAlert(true);
+      setTimeout(() => setShowBandcampAlert(false), 3000);
     } else {
-      setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 3000);
+      window.open(url, "_blank");
     }
   };
 
   return (
     <div className="bg-gray-100 min-h-screen relative">
+      {showBandcampAlert && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-black/80 text-white px-8 py-4 rounded-xl shadow-xl backdrop-blur-sm">
+            <p className="text-sm sm:text-base text-center">
+              {language === 'en' ? 'Bandcamp link will be activated soon!' : 'Bandcamp linki en kısa sürede aktif olacak!'}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {showAppleAlert && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-black/80 text-white px-8 py-4 rounded-xl shadow-xl backdrop-blur-sm">
+            <p className="text-sm sm:text-base text-center">
+              {language === 'en' ? 'Apple Music link will be activated soon!' : 'Apple Music linki en kısa sürede aktif olacak!'}
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="fixed top-4 right-4 z-50">
         <button
           onClick={toggleLanguage}
@@ -29,14 +50,6 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-red-100 opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
         </button>
       </div>
-
-      {showAlert && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-black/80 text-white px-8 py-4 rounded-xl shadow-xl backdrop-blur-sm">
-            <p className="text-sm sm:text-base text-center">{translations.releaseMessage}</p>
-          </div>
-        </div>
-      )}
       
       <div className="flex mx-auto flex-col justify-center items-center w-full max-w-7xl px-4">
         <img
@@ -49,7 +62,7 @@ function App() {
         
         {/* Platform buttons - Update text content with translations */}
         <button
-          onClick={() => openLink("https://youtube.com")}
+          onClick={() => openLink("https://www.youtube.com/playlist?list=PLonXT4gvRzrwk-a28p30UF_GlQLBxwrq4")}
           className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
           <img src="https://www.svgrepo.com/show/475700/youtube-color.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
@@ -64,7 +77,7 @@ function App() {
 
         {/*spotify sec*/}
         <button
-          onClick={() => openLink("https://spotify.com")}
+          onClick={() => openLink("https://open.spotify.com/album/2zhBo8GUggjjSRvExMF97R?si=kqurshADQratpBa_p3PJqw")}
           className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
           <img src="https://www.svgrepo.com/show/475684/spotify-color.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
@@ -79,7 +92,10 @@ function App() {
 
         {/*apple sec*/}
         <button
-          onClick={() => openLink("https://music.apple.com")}
+          onClick={() => {
+            setShowAppleAlert(true);
+            setTimeout(() => setShowAppleAlert(false), 3000);
+          }}
           className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
           <img src="https://www.svgrepo.com/show/349299/apple-music.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
@@ -94,7 +110,10 @@ function App() {
 
         {/*bandcamp sec*/}
         <button
-          onClick={() => openLink("https://bandcamp.com")}
+          onClick={() => {
+            setShowBandcampAlert(true);
+            setTimeout(() => setShowBandcampAlert(false), 3000);
+          }}
           className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
         >
           <img src="https://www.svgrepo.com/show/172824/bc-bandcamp-logo.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover" />
@@ -107,7 +126,7 @@ function App() {
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
 
-        {/*soundcloud sec*/}
+        {/*soundcloud sec
         <button
           onClick={() => openLink("https://soundcloud.com")}
           className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4"
@@ -121,6 +140,8 @@ function App() {
           </div>
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
+
+        */}
 
         <h3 className="text-lg sm:text-xl md:text-2xl mt-4 font-semibold">{translations.donationTitle}</h3>
 
