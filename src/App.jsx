@@ -158,7 +158,7 @@ function App() {
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
         
-        {/*afad sec*/}
+        {/*afad sec
         <button
           onClick={() =>
             openLink(
@@ -174,7 +174,7 @@ function App() {
           </div>
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
-
+*/}
        
       </div>
       
