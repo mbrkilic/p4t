@@ -140,10 +140,10 @@ function App() {
         </button>
 
         */}
-
+         { /* Donation Section 
         <h3 className="text-lg sm:text-xl md:text-2xl mt-4 font-semibold">{translations.donationTitle}</h3>
-
-         {/*ahbap sec*/}
+*/}
+         {/*ahbap sec}
          <button
           onClick={() => openLink("https://ahbap.org/bagis/dogal-afetler")}
           className="hover:scale-110 flex w-full sm:w-[300px] md:w-[400px] lg:w-[480px] h-[120px] justify-between items-center max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-4 px-4 mb-4"
@@ -155,6 +155,7 @@ function App() {
           </div>
           <IoArrowForwardCircle className="object-cover w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]" />
         </button>
+        */}
         
         {/*afad sec
         <button
